@@ -1,111 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
-    font-family: 'Roboto','Courier New', Courier, monospace;
-}
-
 :root {
     --winner-color: #14A76C;
     --line-color: #272727;
     --X-color: #FFE400;
-    --O-color: #FF652F;
+    --Title-color: #FF652F;
+}
+
+.body{
+    display: flex;
+    font-family: 'Roboto','Courier New', Courier, monospace;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .title {
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 5rem;
     text-align: center;
     margin: 20px;
-    color: var(--line-color);
+    color: var(--Title-color);
 }
 
 .board{
     display: grid;
-    margin-right: 20%;
-    margin-left: 20%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
 }
-
-.topLeft{
-    border-right: 2px solid var(--line-color);
-    border-bottom: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.topMiddle{
-    border-right: 2px solid var(--line-color);
-    border-left: 2px solid var(--line-color);
-    border-bottom: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.topRight{
-    border-left: 2px solid var(--line-color);
-    border-bottom: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.leftMiddle{
-    border-right: 2px solid var(--line-color);
-    border-bottom: 2px solid var(--line-color);
-    border-top: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.middle{
-    border: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.rightMiddle{
-    border-left: 2px solid var(--line-color);
-    border-bottom: 2px solid var(--line-color);
-    border-top: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.bottomLeft{
-    border-right: 2px solid var(--line-color);
-    border-top: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.bottomMiddle{
-    border-left: 2px solid var(--line-color);
-    border-top: 2px solid var(--line-color);
-    border-right: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.bottomRight{
-    border-left: 2px solid var(--line-color);
-    border-top: 2px solid var(--line-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.winner{
-    font-weight: bold;
+.cell{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    border: 1px solid var(--line-color);
     font-size: 2rem;
+    cursor: pointer;
+    color: var(--X-color);
+}
+
+.status{
+    font-weight: bold;
+    font-size: 3rem;    
     text-align: center;
-    margin: 20px;
+    margin-top: 30px;
     color: var(--winner-color);
+}
+
+button{
+    margin-left: 50%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--line-color);
+    border: 2px solid var(--winner-color);
+    border-radius: 15px;
+    background-color: white;
 }
